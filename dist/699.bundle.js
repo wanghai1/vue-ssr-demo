@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvue_ssr_demo=self.webpackChunkvue_ssr_demo||[]).push([[699],{699:(e,s,t)=>{t.r(s),t.d(s,{default:()=>r});var u=function(){var e=this,s=e.$createElement;return(e._self._c||s)("div",[e._v("Aboute page")])};u._withStripped=!0;var n=(0,t(900).Z)({name:"Aboute"},u,[],!1,null,null,null);n.options.__file="src/views/Aboute/index.vue";const r=n.exports}}]);

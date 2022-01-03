@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvue_ssr_demo=self.webpackChunkvue_ssr_demo||[]).push([[64],{64:(e,s,n)=>{n.r(s),n.d(s,{default:()=>u});var r=function(){var e=this,s=e.$createElement;return(e._self._c||s)("div",[e._v("Home page")])};r._withStripped=!0;var t=(0,n(900).Z)({name:"Home"},r,[],!1,null,null,null);t.options.__file="src/views/Home/index.vue";const u=t.exports}}]);
