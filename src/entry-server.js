@@ -5,8 +5,6 @@ export default context => {
     const { app , router} = createApp();
     const { url } = context;
 
-    // console.log('url',url);
-    
     // 设置服务器端 router 的位置
     router.push(url);
 

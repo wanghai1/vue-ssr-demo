@@ -24,9 +24,6 @@ module.exports = merge(baseConfig, {
   externals: [nodeExternals({
     allowlist: /\.css$/
   })],
-  optimization: {
-    splitChunks: false
-  },
   output: {
     libraryTarget: 'commonjs2',
     filename: 'server-bundle.js'

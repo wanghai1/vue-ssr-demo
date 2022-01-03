@@ -13,6 +13,9 @@ module.exports = merge(baseConfig, {
   plugins: [
     new VueSSRClientPlugin(), // 生成 clientManifest 
   ],
+  optimization: {
+    splitChunks: false
+  },
   output: {
     clean: true
   }
