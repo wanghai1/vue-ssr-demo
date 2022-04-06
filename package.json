@@ -1,11 +1,46 @@
 {
   "name": "vue-ssr-demo",
   "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "build:client": "webpack --config config/webpack.build.client.config.js",
+    "build:server": "webpack --config config/webpack.build.server.config.js",
+    "build:ssr": "yarn build:client && yarn build:server",
+    "dev": "webpack server --config config/webpack.dev.config.js",
+    "prepare": "husky install",
+    "server": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.2",
+    "vue": "2.6",
+    "vue-router": "^3.5.3",
+    "vue-server-renderer": "^2.6.14",
+    "vuex": "^3.6.2"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-eslint": "~4.5.4",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.2.1",
+    "standardx": "3.0.0",
     "style-loader": "^3.3.1",
     "vue-loader": "^15.9.8",
     "vue-style-loader": "^4.1.3",
@@ -16,23 +51,19 @@
     "webpack-merge": "^5.8.0",
     "webpack-node-externals": "^3.0.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack server --config config/webpack.dev.config.js",
-    "server": "nodemon server/index.js",
-    "build:server": "webpack --config config/webpack.build.server.config.js",
-    "build:client": "webpack --config config/webpack.build.client.config.js",
-    "build:ssr": "yarn build:client && yarn build:server"
-  },
-  "dependencies": {
-    "express": "^4.17.2",
-    "vue": "2.6",
-    "vue-router": "^3.5.3",
-    "vue-server-renderer": "^2.6.14",
-    "vuex": "^3.6.2"
+  "husky": {
+    "hooks": {
+      "pre-commt": "lint-staged"
+    }
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
-  "description": ""
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "node -v",
+      "prettier --write",
+      "eslint --cache --fix",
+      "git add"
+    ]
+  }
 }
