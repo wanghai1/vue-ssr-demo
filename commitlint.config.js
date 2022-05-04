@@ -11,10 +11,10 @@ module.exports = {
       rules: {
         'rtc-rule': ({subject}) => {
           // 匹配 rtc 单号 提交格式例如: feat: 完成页面开发#rtc#1818188
-          const reg = new RegExp(/#rtc#\d{8}$/);
+          const reg = new RegExp(/#rtc#\d{7}$/);
           return [
             reg.test(subject), // 返回 boolean
-            `Your subject should contain rtc message like #rtc#18181888`, // 报错提示
+            `Your subject should contain rtc message like #rtc#1818188`, // 报错提示
           ];
         },
       },
