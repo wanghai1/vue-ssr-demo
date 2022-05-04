@@ -19,7 +19,9 @@ const routes = [
     path: "/about",
     name: "about",
     component: () =>
-      /* webpackChunkName: "About" */ import("@/views/Aboute/index.vue"),
+      /* webpackChunkName: "About" */ import(
+        "@http/src/views/Aboute/index.vue"
+      ), // add 支持远程加载模块，本地缓存
   },
   {
     path: "/home",

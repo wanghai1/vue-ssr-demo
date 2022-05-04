@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const HttpResolveWebpackPlugin = require('../http-reslove-webpack-plugins');
 
 module.exports = {
   resolve: {
@@ -7,6 +8,7 @@ module.exports = {
     alias: {
     	'@':path.resolve(__dirname,"../src"), // 配置路径缩写 
     },
+    plugins: [ new HttpResolveWebpackPlugin({ basePath: 'http://127.0.0.1:5500'}) ] // live-server 启动的本机服务暂时代替 ng
   },
 
   module: {
